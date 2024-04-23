@@ -31,6 +31,7 @@ public class ToDoItemBotController extends TelegramLongPollingBot {
 
 	private static final Logger logger = LoggerFactory.getLogger(ToDoItemBotController.class);
 	private ToDoItemService toDoItemService;
+	private ToDoItemController toDoItemController;
 	private String botName;
 
 	public ToDoItemBotController(String botToken, String botName, ToDoItemService toDoItemService) {
@@ -244,7 +245,7 @@ public class ToDoItemBotController extends TelegramLongPollingBot {
 	}
 
 	// GET /todolist
-	public List<ToDoItem> getAllToDoItems() { 
+	public List<ToDoItem> getAllToDoItems() {
 		return toDoItemService.findAll();
 	}
 
